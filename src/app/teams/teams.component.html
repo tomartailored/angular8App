@@ -1,0 +1,28 @@
+<div class="card mt-4">
+    <h4 class="card-header">{{teams.league}} Teams</h4>
+    <div class="btn-group">
+    	<button class="btn btn-success list-sel-button" routerLink="add-team" >Add New Team</button>
+    	<button class="btn btn-danger list-sel-button" (click)="backClicked()">Cancel</button>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+		  <thead>
+		  <tr>
+		      <th>Team Id</th>
+		      <th>Name</th>
+		      <th>Strip</th>
+		      <th colspan="2">Actions</th>
+		  </tr>
+		  </thead>
+
+		  <tbody>
+		      <tr *ngFor="let team of teams.teams">
+		          <td>{{ team.id }}</td>
+		          <td>{{ team.title }}</td>
+		          <td>{{ team.strip }}</td>
+		          <td><a [routerLink]="['edit', team.id]" class="btn btn-primary">Edit</a></td>
+		      </tr>
+		  </tbody>
+		</table>
+    </div>
+</div>
